@@ -24,9 +24,10 @@
     "dev": "tsup --watch",
     "type-check": "tsc --noEmit",
     "lint": "eslint src",
-    "test": "vitest run --exclude tests/e2e-*",
-    "test:watch": "vitest --exclude tests/e2e-*",
-    "test:e2e": "vitest run tests/e2e-ollama.test.ts",
+    "test": "vitest run --exclude 'tests/e2e-*' --exclude 'tests/seekdb-*'",
+    "test:watch": "vitest --exclude 'tests/e2e-*' --exclude 'tests/seekdb-*'",
+    "test:e2e": "vitest run tests/e2e-*.test.ts",
+    "test:seekdb": "vitest run tests/seekdb-*.test.ts",
     "test:all": "vitest run"
   },
   "dependencies": {
@@ -41,15 +42,18 @@
     "@types/node": "^20.0.0",
     "@vitest/coverage-v8": "^4.1.2",
     "eslint": "^9.0.0",
+    "seekdb": "^1.2.0",
     "tsup": "^8.0.0",
     "tsx": "^4.21.0",
     "typescript": "^5.4.0",
+    "typescript-eslint": "^8.58.0",
     "vitest": "^4.1.2"
   },
   "peerDependencies": {
     "@langchain/anthropic": ">=0.3.0",
     "@langchain/ollama": ">=0.2.0",
-    "@langchain/openai": ">=0.3.0"
+    "@langchain/openai": ">=0.3.0",
+    "seekdb": ">=1.2.0"
   },
   "peerDependenciesMeta": {
     "@langchain/openai": {
@@ -59,6 +63,9 @@
       "optional": true
     },
     "@langchain/ollama": {
+      "optional": true
+    },
+    "seekdb": {
       "optional": true
     }
   }
