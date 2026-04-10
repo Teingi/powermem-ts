@@ -2,6 +2,10 @@
   "name": "powermem",
   "version": "0.1.0",
   "description": "TypeScript SDK for PowerMem",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ob-labs/powermem-ts.git"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
